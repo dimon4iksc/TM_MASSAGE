@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Точковий масаж — Масаж у Моршині</title>
+  <meta name="description" content="Точковий масаж у Моршині — TM MASSAGE. Точковий масаж — це натиск пальцями на певні ділянки тіла: активні точки, тригерні зони в м&#x27;язах, рефлекторні  Запис онлайн.">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="posluga.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script src="../script.js" defer></script>
+</head>
+<body>
+
+  <div id="topbar"></div>
+
+  <!-- 1. Hero -->
+  <header class="cinematic-hero">
+    <div class="film-grain"></div>
+    <img class="hero-bg" src="../screenshots/MASSAGE/acupressure.webp" alt="">
+    <div class="hero-content">
+      <p class="hero-subtitle">Точний вплив</p>
+      <h1 class="hero-title">Точковий масаж</h1>
+    </div>
+    <div class="scroll-indicator">
+      <span>Відкрити</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+
+  <!-- 2. Сторітелінг -->
+  <section class="story-section reveal-trigger">
+    <div class="story-text">
+      <h2 class="split-text">Працюємо з точками, де тримається напруга.</h2>
+      <p class="fade-up-text">Точковий масаж — це натиск пальцями на певні ділянки тіла: активні точки, тригерні зони в м'язах, рефлекторні зони. Тиск дозований і зосереджений, тому відчуття інші, ніж при загальному розслабленні.</p>
+      <p class="fade-up-text delay-1">Його обирають при затисках у шиї, плечах і попереку та при головному болю напруги. Майстер поступово збільшує тиск, а ви завжди можете сказати, якщо занадто сильно.</p>
+    </div>
+    <div class="story-image parallax-img hover-target">
+      <img src="../screenshots/MASSAGE/acupressure.webp" alt="Точковий масаж" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 3. Галерея-акордеон -->
+  <section class="gallery-accordion reveal-trigger">
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/cabinet/9.webp" alt="Масажний кабінет TM MASSAGE" loading="lazy">
+      <div class="accordion-content">
+        <h3>Кабінет</h3>
+        <p>Затишний простір у Моршині</p>
+      </div>
+    </div>
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/MASSAGE/acupressure.webp" alt="Точковий масаж" loading="lazy">
+      <div class="accordion-content">
+        <h3>Точки</h3>
+        <p>Дозований натиск</p>
+      </div>
+    </div>
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/cabinet/4.webp" alt="Масажний стіл у кабінеті" loading="lazy">
+      <div class="accordion-content">
+        <h3>Зони</h3>
+        <p>Шия, плечі, поперек</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Скляний блок -->
+  <section class="glass-section reveal-trigger" style="background-image: url('../screenshots/MASSAGE/bg-pronas.webp');">
+    <div class="glass-box hover-target">
+      <div class="glass-glow"></div>
+      <h3 class="split-text">Локально й прицільно</h3>
+      <p class="fade-up-text">Замість того, щоб масажувати все підряд, ми знаходимо місця, які болять або «гудуть», і працюємо саме з ними. Відчуття можуть бути виразними, але не мають бути нестерпними.</p>
+    </div>
+  </section>
+
+  <!-- 5. Другий блок -->
+  <section class="story-section reverse reveal-trigger">
+    <div class="story-text">
+      <h2 class="split-text">Коли краще обрати інший масаж.</h2>
+      <p class="fade-up-text">Точковий масаж має протипоказання: гострі запальні процеси, підвищена температура, ушкодження шкіри в зоні впливу. Розкажіть про свій стан — якщо метод не підходить, підберемо іншу техніку.</p>
+      <p class="fade-up-text delay-1">Тривалість сеансу — 30, 60 або 90 хвилин залежно від процедури та ваших побажань.</p>
+    </div>
+    <div class="story-image parallax-img hover-target">
+      <img src="../screenshots/cabinet/13.webp" alt="Масажний кабінет" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 6. Заклик до дії -->
+  <section class="premium-cta reveal-trigger">
+    <h2 class="split-text">Запишіться на точковий масаж</h2>
+    <button class="btn-wow hover-target open-modal-btn">Забронювати сеанс</button>
+  </section>
+
+  <!-- Модальне вікно запису -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><b>Запис на масаж</b></h2>
+
+      <form id="massageForm">
+        <label for="name"><b>Прізвище та ім'я:</b></label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone"><b>Номер телефону:</b></label>
+        <div class="phone-input-wrapper">
+          <span class="phone-prefix">+380</span>
+          <input type="tel" id="phone" name="phone" value="__ ___ __ __" inputmode="numeric" required>
+        </div>
+
+        <label for="message"><b>Повідомлення (необов'язково):</b></label>
+        <textarea id="message" name="message" rows="2">Доброго дня, хочу записатись на масаж</textarea>
+
+        <button type="submit"><b>Надіслати</b></button>
+
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+</body>
+</html>

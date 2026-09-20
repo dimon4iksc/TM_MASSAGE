@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лікувальні трави — Масаж у Моршині</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div id="topbar"></div>
+
+  <!-- Банер -->
+  <header class="page-banner herb-banner">
+    <h1>ЛІКУВАЛЬНІ ТРАВИ</h1>
+    <p>Натуральні збори з Карпатських передгір'їв для здоров'я, енергії та внутрішньої гармонії</p>
+  </header>
+
+  <!-- Вступ -->
+  <section class="herb-intro fade-in">
+    <p>
+      Ми віримо, що справжнє оздоровлення починається не лише з рук масажиста, а й з того,
+      що ми п'ємо і як турбуємось про себе щодня. Тому поруч із масажними процедурами
+      пропонуємо натуральні трав'яні збори, зібрані вручну в екологічно чистих Карпатських
+      передгір'ях неподалік Моршина.
+    </p>
+  </section>
+
+  <!-- Каталог трав (горизонтальна стрічка) -->
+  <section class="herb-catalog fade-in">
+    <h2> ТРАВ'ЯНІ ЗБОРИ</h2>
+
+    <div class="herb-scroll-row">
+
+            <div class="herb-card">
+        <div class="herb-icon"><img src="screenshots/chayi/romashka.webp" alt="Ромашка"></div>
+        <h3>Ромашка</h3>
+        <p>Заспокоює нервову систему, знімає запалення, покращує сон.</p>
+      </div>
+
+      <div class="herb-card">
+        <div class="herb-icon"><img src="screenshots/chayi/myata-perceva.webp" alt="М'ята перцева"></div>
+        <h3>М'ята перцева</h3>
+        <p>Знімає головний біль, покращує травлення, освіжає подих.</p>
+      </div>
+
+      <div class="herb-card">
+        <div class="herb-icon"><img src="screenshots/chayi/zvirobiy.webp" alt="Звіробій"></div>
+        <h3>Звіробій</h3>
+        <p>Природний антидепресант, підтримує печінку та імунітет.</p>
+      </div>
+
+      <div class="herb-card">
+        <div class="herb-icon"><img src="screenshots/chayi/lupa.webp" alt="Липовий цвіт"></div>
+        <h3>Липовий цвіт</h3>
+        <p>Класика при застуді, знижує температуру, зігріває.</p>
+      </div>
+
+      <div class="herb-card">
+        <div class="herb-icon"><img src="screenshots/chayi/ivan-chay.webp" alt="Іван чай"></div>
+        <h3>Іван чай</h3>
+        <p>Класика при застуді, знижує температуру, зігріває.</p>
+      </div>
+
+      <div class="herb-card">
+        <div class="herb-icon"><img src="screenshots/chayi/chebrec.webp" alt="Чебрець"></div>
+        <h3>Чебрець</h3>
+        <p>Карпатська трава для міцного імунітету та бадьорості.</p>
+      </div>
+
+      <div class="herb-card">
+        <div class="herb-icon"><img src="screenshots/chayi/valeriana.webp" alt="Валеріана"></div>
+        <h3>Валеріана</h3>
+        <p>М'яко заспокоює, допомагає при тривозі та безсонні.</p>
+      </div>
+
+      <div class="herb-card">
+        <div class="herb-icon"><img src="screenshots/chayi/materinka.webp" alt="Материнка"></div>
+        <h3>Материнка</h3>
+        <p>Підтримує жіноче здоров'я, знімає спазми, зігріває.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Підбір чаю (інтерактив) -->
+  <section class="herb-finder fade-in">
+    <h2>Підберіть чай для себе</h2>
+    <p class="finder-subtitle">Оберіть, що вас турбує зараз — і отримайте рекомендацію</p>
+
+    <div class="finder-buttons">
+      <button class="finder-btn" data-herb="sleep">😴 Безсоння</button>
+      <button class="finder-btn" data-herb="cold">🤧 Застуда</button>
+      <button class="finder-btn" data-herb="stress">😣 Стрес</button>
+      <button class="finder-btn" data-herb="headache">🤕 Головний біль</button>
+      <button class="finder-btn" data-herb="digestion">🍵 Травлення</button>
+    </div>
+
+    <div class="finder-result" id="finderResult">
+      <p class="finder-placeholder">Натисніть на кнопку вище, щоб отримати рекомендацію</p>
+    </div>
+  </section>
+
+  <!-- Як заварювати -->
+  <section class="herb-steps fade-in">
+    <h2>ЯК ПРАВИЛЬНО ЗАВАРЮВАТИ</h2>
+    <div class="steps-row">
+
+      <div class="step-box">
+        <span class="step-number">1</span>
+        <h3>Візьміть 1 ч.л.</h3>
+        <p>Насипте одну чайну ложку сухого збору на чашку окропу (200 мл).</p>
+      </div>
+
+      <div class="step-box">
+        <span class="step-number">2</span>
+        <h3>Залийте окропом</h3>
+        <p>Вода має бути гарячою, але не кипітком 90-95°C ідеально.</p>
+      </div>
+
+      <div class="step-box">
+        <span class="step-number">3</span>
+        <h3>Настояти 10 хв</h3>
+        <p>Накрийте чашу й дайте настоятись для розкриття корисних властивостей.</p>
+      </div>
+
+      <div class="step-box">
+        <span class="step-number">4</span>
+        <h3>Насолоджуйтесь</h3>
+        <p>Пийте теплим, за бажанням з медом чи лимоном.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Заклик до дії -->
+  <section class="about-cta travi fade-in">
+    <h2>Спробуйте силу карпатських трав</h2>
+    <p>Замовте трав'яний збір або запишіться на масаж з чашкою ароматного чаю в подарунок.</p>
+    <button class="button1 open-modal-btn"><b>Отримати консультацію</b></button>
+  </section>
+
+  <!-- Модальне вікно запису -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><b>Запис на масаж</b></h2>
+
+      <form id="massageForm">
+        <label for="name"><b>Прізвище та ім'я:</b></label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone"><b>Номер телефону:</b></label>
+        <div class="phone-input-wrapper">
+          <span class="phone-prefix">+380</span>
+          <input type="tel" id="phone" name="phone" value="__ ___ __ __" inputmode="numeric" required>
+        </div>
+
+        <label for="message"><b>Повідомлення (необов'язково):</b></label>
+        <textarea id="message" name="message" rows="2">Доброго дня, хочу записатись на масаж</textarea>
+
+        <button type="submit"><b>Надіслати</b></button>
+
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+    <!-- Лайтбокс для перегляду фото трав -->
+  <div class="herb-lightbox" id="herbLightbox">
+    <button class="herb-lightbox-close" id="herbLightboxClose" aria-label="Закрити">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img class="herb-lightbox-img" id="herbLightboxImg" src="" alt="Фото трави">
+    <div class="herb-lightbox-caption" id="herbLightboxCaption"></div>
+  </div>
+
+  <div id="footer"></div>
+
+</body>
+</html>

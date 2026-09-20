@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Голкотерапія — Масаж у Моршині</title>
+  <meta name="description" content="Голкотерапія у Моршині — TM MASSAGE. Голкотерапія (акупунктура) — метод, при якому тонкі голки вводять у певні точки тіла. Запис онлайн.">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="posluga.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script src="../script.js" defer></script>
+</head>
+<body>
+
+  <div id="topbar"></div>
+
+  <!-- 1. Hero -->
+  <header class="cinematic-hero">
+    <div class="film-grain"></div>
+    <img class="hero-bg" src="../screenshots/MASSAGE/acupuncture.webp" alt="">
+    <div class="hero-content">
+      <p class="hero-subtitle">Точковий вплив голками</p>
+      <h1 class="hero-title">Голкотерапія</h1>
+    </div>
+    <div class="scroll-indicator">
+      <span>Відкрити</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+
+  <!-- 2. Сторітелінг -->
+  <section class="story-section reveal-trigger">
+    <div class="story-text">
+      <h2 class="split-text">Уважно й тільки після консультації.</h2>
+      <p class="fade-up-text">Голкотерапія (акупунктура) — метод, при якому тонкі голки вводять у певні точки тіла. Її використовують, зокрема, для роботи з напругою та болем у м'язах і спині.</p>
+      <p class="fade-up-text delay-1">Голкотерапію можна поєднати з масажем або провести окремо. Перед процедурою — обов'язкова консультація: майстер розпитає про здоров'я, хронічні захворювання та ліки, які ви приймаєте.</p>
+    </div>
+    <div class="story-image parallax-img hover-target">
+      <img src="../screenshots/MASSAGE/acupuncture.webp" alt="Голкотерапія" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 3. Галерея-акордеон -->
+  <section class="gallery-accordion reveal-trigger">
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/cabinet/9.webp" alt="Масажний кабінет TM MASSAGE" loading="lazy">
+      <div class="accordion-content">
+        <h3>Кабінет</h3>
+        <p>Затишний простір у Моршині</p>
+      </div>
+    </div>
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/MASSAGE/acupuncture.webp" alt="Голкотерапія" loading="lazy">
+      <div class="accordion-content">
+        <h3>Точки</h3>
+        <p>Прицільний вплив</p>
+      </div>
+    </div>
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/cabinet/4.webp" alt="Масажний стіл у кабінеті" loading="lazy">
+      <div class="accordion-content">
+        <h3>Консультація</h3>
+        <p>Перед кожною процедурою</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Скляний блок -->
+  <section class="glass-section reveal-trigger" style="background-image: url('../screenshots/MASSAGE/bg-pronas.webp');">
+    <div class="glass-box hover-target">
+      <div class="glass-glow"></div>
+      <h3 class="split-text">Спокійно й без поспіху</h3>
+      <p class="fade-up-text">Багато хто хвилюється перед першою процедурою — це нормально. Ми пояснимо, що відбуватиметься, а зупинити процедуру ви можете в будь-який момент.</p>
+    </div>
+  </section>
+
+  <!-- 5. Другий блок -->
+  <section class="story-section reverse reveal-trigger">
+    <div class="story-text">
+      <h2 class="split-text">Важливі обмеження.</h2>
+      <p class="fade-up-text">Голкотерапія має протипоказання: вагітність, порушення згортання крові, гострі інфекції, ушкодження шкіри, електронні імплантати та інші. Тому без консультації ми процедуру не проводимо.</p>
+      <p class="fade-up-text delay-1">Тривалість сеансу — 30, 60 або 90 хвилин залежно від процедури та ваших побажань.</p>
+    </div>
+    <div class="story-image parallax-img hover-target">
+      <img src="../screenshots/cabinet/13.webp" alt="Масажний кабінет" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 6. Заклик до дії -->
+  <section class="premium-cta reveal-trigger">
+    <h2 class="split-text">Запишіться на консультацію</h2>
+    <button class="btn-wow hover-target open-modal-btn">Забронювати сеанс</button>
+  </section>
+
+  <!-- Модальне вікно запису -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><b>Запис на масаж</b></h2>
+
+      <form id="massageForm">
+        <label for="name"><b>Прізвище та ім'я:</b></label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone"><b>Номер телефону:</b></label>
+        <div class="phone-input-wrapper">
+          <span class="phone-prefix">+380</span>
+          <input type="tel" id="phone" name="phone" value="__ ___ __ __" inputmode="numeric" required>
+        </div>
+
+        <label for="message"><b>Повідомлення (необов'язково):</b></label>
+        <textarea id="message" name="message" rows="2">Доброго дня, хочу записатись на масаж</textarea>
+
+        <button type="submit"><b>Надіслати</b></button>
+
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+</body>
+</html>

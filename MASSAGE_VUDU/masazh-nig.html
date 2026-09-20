@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Масаж ніг — Масаж у Моршині</title>
+  <meta name="description" content="Масаж ніг у Моршині — TM MASSAGE. Масаж ніг охоплює стегна, гомілки й стопи. Запис онлайн.">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="posluga.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script src="../script.js" defer></script>
+</head>
+<body>
+
+  <div id="topbar"></div>
+
+  <!-- 1. Hero -->
+  <header class="cinematic-hero">
+    <div class="film-grain"></div>
+    <img class="hero-bg" src="../screenshots/MASSAGE/leg-massage.webp" alt="">
+    <div class="hero-content">
+      <p class="hero-subtitle">Легкі ноги</p>
+      <h1 class="hero-title">Масаж ніг</h1>
+    </div>
+    <div class="scroll-indicator">
+      <span>Відкрити</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+
+  <!-- 2. Сторітелінг -->
+  <section class="story-section reveal-trigger">
+    <div class="story-text">
+      <h2 class="split-text">Відновлення для ніг після довгого дня.</h2>
+      <p class="fade-up-text">Масаж ніг охоплює стегна, гомілки й стопи. Плавні розтирання та розминання допомагають зняти втому, особливо якщо день минув на ногах або за кермом.</p>
+      <p class="fade-up-text delay-1">Його обирають після тренувань, довгих подорожей і сидячої роботи, коли ноги здаються важкими.</p>
+    </div>
+    <div class="story-image parallax-img hover-target">
+      <img src="../screenshots/MASSAGE/leg-massage.webp" alt="Масаж ніг" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 3. Галерея-акордеон -->
+  <section class="gallery-accordion reveal-trigger">
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/cabinet/9.webp" alt="Масажний кабінет TM MASSAGE" loading="lazy">
+      <div class="accordion-content">
+        <h3>Кабінет</h3>
+        <p>Затишний простір у Моршині</p>
+      </div>
+    </div>
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/MASSAGE/leg-massage.webp" alt="Масаж ніг" loading="lazy">
+      <div class="accordion-content">
+        <h3>Гомілки</h3>
+        <p>Розслаблення м'язів</p>
+      </div>
+    </div>
+    <div class="accordion-item hover-target">
+      <img src="../screenshots/cabinet/4.webp" alt="Масажний стіл у кабінеті" loading="lazy">
+      <div class="accordion-content">
+        <h3>Стегна</h3>
+        <p>Від стопи до коліна</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Скляний блок -->
+  <section class="glass-section reveal-trigger" style="background-image: url('../screenshots/MASSAGE/bg-pronas.webp');">
+    <div class="glass-box hover-target">
+      <div class="glass-glow"></div>
+      <h3 class="split-text">Ноги, що не тягнуть донизу</h3>
+      <p class="fade-up-text">Коли ноги відпочили, змінюється відчуття всього тіла: легше ходити й легше стояти. Ми працюємо в комфортному темпі, без різкого тиску.</p>
+    </div>
+  </section>
+
+  <!-- 5. Другий блок -->
+  <section class="story-section reverse reveal-trigger">
+    <div class="story-text">
+      <h2 class="split-text">Що враховуємо.</h2>
+      <p class="fade-up-text">Масаж ніг не проводять при тромбозі, гострому варикозі, запаленнях та ушкодженнях шкіри. Якщо у вас розширені вени чи набряки — повідомте майстра, і ми підберемо м'якшу техніку.</p>
+      <p class="fade-up-text delay-1">Тривалість сеансу — 30, 60 або 90 хвилин залежно від процедури та ваших побажань.</p>
+    </div>
+    <div class="story-image parallax-img hover-target">
+      <img src="../screenshots/cabinet/13.webp" alt="Масажний кабінет" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 6. Заклик до дії -->
+  <section class="premium-cta reveal-trigger">
+    <h2 class="split-text">Запишіться на масаж ніг</h2>
+    <button class="btn-wow hover-target open-modal-btn">Забронювати сеанс</button>
+  </section>
+
+  <!-- Модальне вікно запису -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><b>Запис на масаж</b></h2>
+
+      <form id="massageForm">
+        <label for="name"><b>Прізвище та ім'я:</b></label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone"><b>Номер телефону:</b></label>
+        <div class="phone-input-wrapper">
+          <span class="phone-prefix">+380</span>
+          <input type="tel" id="phone" name="phone" value="__ ___ __ __" inputmode="numeric" required>
+        </div>
+
+        <label for="message"><b>Повідомлення (необов'язково):</b></label>
+        <textarea id="message" name="message" rows="2">Доброго дня, хочу записатись на масаж</textarea>
+
+        <button type="submit"><b>Надіслати</b></button>
+
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Масаж у Моршині</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+
+  <div id="topbar"></div>
+
+  <!-- Hero секція -->
+<div class="hero-wrapper" id="hero-wrapper">
+<header class="hero" id="hero">
+<div class="hero-inner">
+<div class="hero-top"><h1><b>Масаж момент гармонії та спокою</b></h1></div>
+<div class="hero-bottom"><h2 class="hero-subtitle"><b>Ваше тіло заслуговує на відпочинок</b></h2><button class="button1 open-modal-btn"><b>Отримати консультацію</b></button></div>
+</div>
+</header>
+</div>
+
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><b>Запис на масаж</b></h2>
+
+
+
+    <!-- ФОРМА -->
+
+      <form id="massageForm">
+
+  <label for="name"><b>Прізвище та ім'я:</b></label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="phone"><b>Номер телефону:</b></label>
+  <div class="phone-input-wrapper">
+    <span class="phone-prefix">+380</span>
+    <input type="tel" id="phone" name="phone" value="__ ___ __ __" inputmode="numeric" required>
+  </div>
+
+  <label for="message"><b>Повідомлення (необов'язково):</b></label>
+  <textarea id="message" name="message" rows="2">Доброго дня, хочу записатись на масаж</textarea>
+
+  <button type="submit"><b>Надіслати</b></button>
+
+  <div id="formMessage" class="form-message"></div>
+  </form>
+    </div>
+  </div>
+  
+  <section class="massage-gallery fade-in">
+    <h2 class="gallery-title">НАШІ ПОСЛУГИ</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <a href="/Massage.html">
+          <img src="screenshots/GOLOVNA/MASSAGE.jpg" alt="Масаж">
+          <div class="gallery-text">МАСАЖ<br>(ручні техніки)</div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="Likuvalni-travy.html">
+          <img src="screenshots/GOLOVNA/Likuvalni-travy.jpg" alt="ЛІКУВАЛЬНІ ЧАЇ">
+          <div class="gallery-text">ЛІКУВАЛЬНІ ТРАВИ<br> (натуральні збори)</div>
+          </a>
+      </div>
+      <div class="gallery-item">
+        <a href="massage-aparat.html">
+          <img src="screenshots/GOLOVNA/massage-aparat.jpg" alt="Масажні апарати">
+          <div class="gallery-text">МАСАЖНІ АПАРАТИ<br>(сучасні технології)</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- ЧОМУ ОБИРАЮТЬ САМЕ НАС -->
+<section class="why-us">
+  <h2>ЧОМУ ОБИРАЮТЬ САМЕ НАС</h2>
+  <ul class="why-list">
+    <li>
+      <strong>Різноманіття технік</strong>
+      Підберемо саме те, що потрібно вашому тілу: від глибокого класичного та лімфодренажного масажу до точкових та авторських технік для зняття затисків і втоми, ви точно знайдете те, що потрібно вам саме сьогодні.
+    </li>
+    <li>
+      <strong>Індивідуальний сервіс</strong>
+      Перед кожним сеансом ми проводимо первинну консультацію, щоб глибше зрозуміти ваші потреби, стан здоров’я та побажання. Це дозволяє розробити програму процедур, яка буде максимально ефективною саме для вас.
+    </li>
+    <li>
+      <strong>Бездоганна організація</strong>
+      Ми працюємо щодня, включаючи вихідні та святкові дні. Чітке дотримання графіку, в разі екстрених ситуацій ми переносимо запис або ж надаємо іншого майстра, і ми гарантуємо що ви не пропустите жодного сеансу.
+    </li>
+    <li>
+      <strong>Гнучкість і комфорт</strong>
+      Зручне онлайн-бронювання за кілька кліків та швидкий зв’язок у Viber, Telegram чи по телефону. Ми миттєво підберемо зручний час, завчасно нагадаємо про візит і відповімо на всі питання, щоб ваш відпочинок пройшов без жодних турбот.
+    </li>
+  </ul>
+</section>
+
+  <!-- КРУЖКИ -->
+
+  <section class="benefit-cards">
+    <div class="card">
+      <img src="screenshots/icons/1.jpg" alt="Розслаблення та зняття стресу">
+      <p>РОЗСЛАБЛЕННЯ ТА ЗНЯТТЯ СТРЕСУ</p>
+    </div>
+    <div class="card">
+      <img src="screenshots/icons/2.jpg" alt="Покращення самопочуття">
+      <p>ПОКРАЩЕННЯ САМОПОЧУТТЯ</p>
+    </div>
+    <div class="card">
+      <img src="screenshots/icons/3.jpg" alt="Зниження болю">
+      <p>ЗНИЖЕННЯ ГОЛОВНОГО БОЛЮ</p>
+    </div>
+    <div class="card">
+      <img src="screenshots/icons/4.jpg" alt="Підвищення краси та впевненості в собі">
+      <p>ПІДВИЩЕННЯ КРАСИ ТА ВПЕВНЕНОСТІ В СОБІ</p>
+    </div>
+  </section>
+
+  <!-- НАЙПОПУЛЯРНІШІ ПОСЛУГИ У НАС -->
+
+    <section class="popular-services">
+    <h2>НАЙПОПУЛЯРНІШІ ПОСЛУГИ У НАС</h2>
+
+    <div class="swiper mySwiper" tabindex="0">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <a href="MASSAGE_VUDU/masazh-spyny.html">
+        <img src="screenshots/MASSAGE/back-massage.webp" alt="МАСАЖ СПИНИ">
+        <div class="caption">
+          <h3>МАСАЖ СПИНИ</h3>
+          <p>Масаж спини — це один із найефективніших способів зняти напругу...</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="MASSAGE_VUDU/antitselyulitnyy-masazh.html">
+        <img src="screenshots/MASSAGE/anti-cellulite-massage.webp" alt="Антицелюлітний масаж">
+        <div class="caption">
+          <h3>АНТИЦЕЛЮЛІТНИЙ МАСАЖ</h3>
+          <p>Антицелюлітний масаж — це спеціалізована техніка...</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="MASSAGE_VUDU/limfodrenazhnyy-masazh.html">
+        <img src="screenshots/MASSAGE/lymphatic-drainage-massage.webp" alt="Лімфодренажний масаж">
+        <div class="caption">
+          <h3>ЛІМФОДРЕНАЖНИЙ МАСАЖ</h3>
+          <p>Лімфодренажний масаж — це спеціалізована методика...</p>
+        </a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="MASSAGE_VUDU/masazh-oblychchya.html">
+        <img src="screenshots/MASSAGE/face-massage.webp" alt="МАСАЖ ОБЛИЧЧЯ">
+        <div class="caption">
+          <h3>МАСАЖ ОБЛИЧЧЯ</h3>
+          <p>Масаж обличчя — це професійна процедура, яка об’єднує ручні та, за потреби, апаратні техніки, спрямовані на покращення стану шкіри...</p>
+        </a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="MASSAGE_VUDU/glyboko-tkanynnyy-masazh.html">
+        <img src="screenshots/MASSAGE/deep-tissue-massage.webp" alt="Глибоко тканинний масаж">
+        <div class="caption">
+          <h3>ГЛИБОКО ТКАНИННИЙ МАСАЖ</h3>
+          <p>Глибоко тканинний масаж — це інтенсивна форма масажу, спрямована на роботу з глибоко  розташованими м'язами та тканинами....</p>
+        </a>        
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="MASSAGE_VUDU/banochnyy-masazh.html">
+        <img src="screenshots/MASSAGE/cupping-massage.webp" alt="БАНОЧНИЙ МАСАЖ">
+        <div class="caption">
+          <h3>БАНОЧНИЙ МАСАЖ</h3>
+          <p>Баночний масаж — це процедура, яка використовує вакуум для стимуляції кровообігу, покращення лімфодренажу та стану м’язів...</p>
+        </a> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Стрілки -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- Індикатори окремим блоком --> 
+     <div class="swiper-pagination"></div>
+      
+    <!-- Кнопка під кружками --> 
+     <div class="button-wrapper" id="faq-item"> 
+      <a href="/Massage.html" > 
+      <button class="view-all">ПЕРЕГЛЯНУТИ ВСІ НАШІ ПОСЛУГИ</button>
+     </a>
+    </div>
+  </section>
+  </section>
+  
+<section class="homepage-faq fade-in">
+  <h2>ПОПУЛЯРНІ ЗАПИТАННЯ</h2>
+
+  <div class="faq-grid">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-icon"><i class="fa-solid fa-hand-sparkles"></i></span>
+        <span class="faq-text">Які види масажу ви пропонуєте?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Ми пропонуємо широкий спектр масажів: від класичного, оздоровчого та лімфодренажного до антицелюлітного та глибоких авторських релакс-технік.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-icon"><i class="fa-solid fa-calendar-check"></i></span>
+        <span class="faq-text">Чи можу я записатися на масаж без попереднього запису?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Ми працюємо за попереднім записом, щоб гарантувати вам вільний час майстра та підготувати кабінет до вашого приходу.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-icon"><i class="fa-solid fa-clock"></i></span>
+        <span class="faq-text" id="reviews-slider">Яка тривалість сеансу масажу?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Залежно від обраної процедури та ваших побажань, тривалість сеансу становить 30, 60 або 90 хвилин.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+        <span class="faq-text">Чи буде боляче під час сеансу?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Ні. Майстер завжди орієнтується на ваш больовий поріг і регулює силу натиску. Масаж має приносити полегшення та комфорт, а не терпіння болю.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-icon"><i class="fa-solid fa-compass"></i></span>
+        <span class="faq-text">Що робити, якщо я не знаю, який саме масаж мені потрібен?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Не хвилюйтеся. Перед сеансом майстер поспілкується з вами, запитає про самопочуття, рівень навантаження та бажаний результат, після чого допоможе підібрати ідеальну техніка саме під ваші потреби.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-icon"><i class="fa-solid fa-calendar-xmark"></i></span>
+        <span class="faq-text">Що робити, якщо у мене змінилися плани і треба скасувати візит?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Життя буває непередбачуваним. Просто попередьте нас у месенджері або за телефоном щонайменше за 2-3 години до сеансу, і ми без проблем перенесемо його на інший зручний час.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!--   ВІДГУКИ КЛІЄНТІВ     -->
+<section class="reviews-slider">
+  <h2>ВІДГУКИ НАШИХ КЛІЄНТІВ</h2>
+  <div class="swiper reviewSwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="review-card">
+          <h3>Анна</h3>
+          <p>“Масаж був неймовірний!<br> Відчуття легкості після першого сеансу.”</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="review-card">
+          <h3>Олег</h3>
+          <p>“Професійний підхід, чистота, комфорт — все на найвищому рівні.”</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="review-card">
+          <h3>Ірина</h3>
+          <p>“Після лімфодренажного масажу зникла набряклість і покращився сон.”</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="review-card">
+          <h3>Марія</h3>
+          <p>“Дуже сподобалась атмосфера: спокійна музика, приємний аромат.”</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="review-card">
+          <h3>Володимир</h3>
+          <p>“Записався на курс масажів, результат відчутний вже після трьох процедур.”</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="review-card">
+          <h3>Світлана</h3>
+          <p>“Майстер визначив які проблеми зі спиною,після сеансу набагато краще.”</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="review-card">
+          <h3>Дмитро</h3>
+          <p>“Рекомендую! Дуже професійно, відчувається досвід і турбота про клієнта.”</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="review-card">
+          <h3>Катерина</h3>
+          <p>“Антицелюлітний масаж реально працює — шкіра стала більш пружною.”</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+
+  <div class="swiper-slide">
+     <div class="review-card">
+       <h3>Наталія</h3>
+        <p>“Дуже уважний майстер, після масажу відчуття легкості у всьому тілі.”</p>
+         <div class="stars">★★★★★</div>
+      </div>
+  </div> 
+  <div class="swiper-slide"> 
+    <div class="review-card"> 
+      <h3>Юрій</h3> 
+      <p>“Записався вперше — залишився дуже задоволений, обов’язково прийду ще.”</p> 
+      <div class="stars">★★★★☆</div> 
+    </div> 
+  </div> 
+  <div class="swiper-slide"> 
+    <div class="review-card"> 
+        <h3>Оксана</h3> 
+      <p>“Масаж обличчя просто супер — шкіра стала свіжішою і підтягнутою.”</p> 
+      <div class="stars">★★★★★</div> 
+    </div> 
+  </div> 
+  <div class="swiper-slide"> 
+    <div class="review-card"> 
+      <h3>Петро</h3> 
+      <p>“Дуже сподобалось, що майстер пояснює кожен етап і дає поради після сеансу.”</p> 
+      <div class="stars">★★★★★</div> 
+    </div> 
+  </div> 
+</div> 
+<div class="swiper-button-prev review-button-prev"></div>
+<div class="swiper-button-next review-button-next"></div>
+<div class="swiper-pagination review-pagination"></div>
+</div>
+</section>
+
+  <!--   ЖИВИЙ ГРАФІК РОБОТИ     -->
+<section class="working-hours fade-in">
+  <div class="hours-status-card">
+    <div class="status-indicator">
+      <span class="status-dot" id="statusDot"></span>
+      <span class="status-text" id="statusText">Перевіряємо...</span>
+    </div>
+    <p class="status-detail" id="statusDetail"></p>
+    <button class="button1 open-modal-btn"><b>Записатись зараз</b></button>
+  </div>
+
+  <div class="hours-schedule">
+    <h3>Графік роботи</h3>
+    <ul class="schedule-list" id="scheduleList">
+      <li data-day="1"><span>Понеділок</span><span>08:00 – 17:00</span></li>
+      <li data-day="2"><span>Вівторок</span><span>08:00 – 17:00</span></li>
+      <li data-day="3"><span>Середа</span><span>08:00 – 17:00</span></li>
+      <li data-day="4"><span>Четвер</span><span>08:00 – 17:00</span></li>
+      <li data-day="5"><span>П'ятниця</span><span>08:00 – 17:00</span></li>
+      <li data-day="6"><span>Субота</span><span>08:00 – 16:00</span></li>
+      <li data-day="0"><span>Неділя</span><span>08:00 – 13:00</span></li>
+    </ul>
+  </div>
+</section> 
+  
+
+
+<!-- СЕКЦІЯ "НАША ЛОКАЦІЯ" (Вставляти перед <footer>) -->
+<section class="location-section" id="location">
+  <div class="location-container">
+    
+    <!-- Заголовок секції -->
+    <div class="location-header">
+      <span class="location-subtitle">НАША ЛОКАЦІЯ</span>
+      <h2 class="location-title">ЗНАЙДІТЬ НАС</h2>
+      <p class="location-desc">Затишний простір для вашого відпочинку знаходиться у самому серці Моршина.</p>
+    </div>
+
+    <!-- Основний контент: Карта + Інформація -->
+    <div class="location-grid">
+      
+      <!-- Ліва колонка: Велика інтерактивна карта -->
+      <div class="location-map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2600.218531191598!2d23.8674!3d49.1546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4739f9e5e5e5e5e5%3A0x123456789abcdef!2z0LzRgtC-0YDQtdC90LjRhtGP!5e0!3m2!1suk!2sua!4v1700000000000"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <!-- Права колонка: Інформаційний блок -->
+      <div class="location-info-wrapper">
+        
+        <!-- Пункт 1: Адреса -->
+        <div class="location-info-item">
+          <div class="info-circle-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="info-text">
+            <span class="info-tag">НАША ЛОКАЦІЯ</span>
+            <p>Україна, м. Моршин<br>вул. Джерельна, 1</p>
+          </div>
+        </div>
+
+        <div class="info-divider"></div>
+
+        <!-- Пункт 2: Телефон -->
+        <div class="location-info-item">
+          <div class="info-circle-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="info-text">
+            <span class="info-tag">ТЕЛЕФОН</span>
+            <p>
+              <a href="tel:+380993140821">+38 (099) 31 408 21</a><br>
+              <a href="tel:+380987619321">+38 (098) 761 93 21</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-divider"></div>
+
+        <!-- Пункт 3: Як дістатись -->
+        <div class="location-info-item">
+          <div class="info-circle-icon">
+            <i class="fa-regular fa-comment-dots"></i>
+          </div>
+          <div class="info-text">
+            <span class="info-tag">ЯК ДО НАС ДІСТАТИСЬ</span>
+            <p>Зручно добиратися як громадським транспортом, так і власним авто. Поруч є парковка.</p>
+          </div>
+        </div>
+
+        <!-- Кнопка "Відкрити на карті" -->
+        <a href="https://maps.google.com/?q=Моршин+вул.+Джерельна+1" target="_blank" rel="noopener noreferrer" class="map-open-btn">
+          <span class="btn-content">
+            <i class="fa-solid fa-location-dot btn-icon-left"></i>
+            <span>ВІДКРИТИ НА КАРТІ</span>
+          </span>
+          <i class="fa-solid fa-arrow-right btn-icon-arrow"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,          // показувати 3 картки одночасно
+      spaceBetween: 30,          // відстань між картками
+      loop: true,                // безкінечний цикл
+
+      autoplay: {
+        delay: 6000,             // автопрокрутка кожні 5 секунд
+        disableOnInteraction: false
+      },
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      grabCursor: true,          // тягнення курсором
+
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+        pageUpDown: true
+      },
+
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+      },
+
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    // ✅ Автоматичний фокус на слайдер при завантаженні
+    window.addEventListener("load", () => {
+      const swiperEl = document.querySelector(".mySwiper");
+      if (swiperEl) {
+        swiperEl.setAttribute("tabindex", "0");
+        swiperEl.focus({ preventScroll: true });
+      }
+    });
+
+    // ✅ Альтернативне керування WASD
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key.toLowerCase() === "d") {
+        swiper.slideNext();
+      }
+      if (e.key === "ArrowLeft" || e.key.toLowerCase() === "a") {
+        swiper.slidePrev();
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector('.why-us');
+    const items = section.querySelectorAll('li');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('animate');
+            }, index * 600); // затримка між рядками
+          });
+          observer.unobserve(section);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(section);
+  });
+</script>
+<div id="footer"></div>
+</body>
+</html>

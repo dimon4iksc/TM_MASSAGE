@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наш кабінет — усі фото</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<style>
+ 
+ .back-link-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px 0;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #f1dc8fc5;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 3px;
+  }
+
+  .back-arrow {
+    display: flex;
+    align-items: center;
+    transition: transform 0.35s ease;
+  }
+
+  .back-arrow svg {
+    color: #dad2b8;
+    transition: color 0.35s ease;
+  }
+
+  .back-text {
+    position: relative;
+     font-size: 1.5rem;
+  }
+
+  .back-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background: #f5d88c;
+    transition: width 0.35s ease;
+  }
+
+  .back-link:hover {
+    color: #f5d88c;
+  }
+
+  .back-link:hover .back-arrow {
+    transform: translateX(-6px);
+  }
+
+  .back-link:hover .back-arrow svg {
+    color: #f5d88c;
+  }
+
+  .back-link:hover .back-text::after {
+    width: 100%;
+  }
+
+  .page-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 0px 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #f5d88c;
+    margin: 0 0 0px;
+  }
+  
+  .page-header p {
+    max-width: 640px;
+    margin: 20px auto 0;
+    color: #cfc7b8;
+    font-size: 1.35rem;
+    line-height: 1.7;
+  }
+
+  .full-gallery-grid {
+    max-width: 1200px;
+    margin: 15px auto 50px;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .full-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 8px 20px rgba(211, 186, 186, 0);
+  }
+
+  .full-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .full-gallery-item:hover img {
+    transform: scale(1.08);
+  }
+
+  .full-gallery-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  .full-gallery-item:hover .overlay {
+    opacity: 1;
+  }
+
+  .overlay i {
+    color: #f5d88c;
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 900px) {
+    .full-gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .full-gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ==========================================================
+     ЛАЙТБОКС
+     Усі позиційні властивості з !important — щоб гарантовано
+     перебити будь-який конфліктний стиль з style.css.
+     Елемент також переноситься в кінець <body> через JS,
+     щоб не залежати від transform/filter на батьківських блоках.
+  ========================================================== */
+  #galleryLightbox.gallery-lightbox {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    transform: none !important;
+    background: rgba(0, 0, 0, 0.94) !important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999 !important;
+  }
+
+  #galleryLightbox.gallery-lightbox.show {
+    display: flex !important;
+  }
+
+  .lightbox-img {
+    max-width: 82%;
+    max-height: 82%;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    animation: lightboxFade 0.35s ease;
+  }
+
+  @keyframes lightboxFade {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .lightbox-close,
+  .lightbox-arrow {
+    position: fixed !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    cursor: pointer;
+    z-index: 1000000 !important;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
+  }
+
+  .lightbox-close {
+    top: 24px !important;
+    right: 28px !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightbox-close:hover {
+    background: rgba(212, 175, 55, 0.22);
+    border-color: #d4af37;
+    transform: rotate(90deg) !important;
+  }
+
+  .lightbox-arrow {
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    width: 52px;
+    height: 52px;
+  }
+
+  .lightbox-arrow:hover {
+    background: rgba(212, 175, 55, 0.22);
+    border-color: #d4af37;
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+  }
+
+  .lightbox-prev {
+    left: 28px !important;
+    right: auto !important;
+  }
+
+  .lightbox-prev:hover {
+    transform: translateY(-50%) translateX(-5px) !important;
+  }
+
+  .lightbox-next {
+    right: 28px !important;
+    left: auto !important;
+  }
+
+  .lightbox-next:hover {
+    transform: translateY(-50%) translateX(5px) !important;
+  }
+
+  .lightbox-close svg,
+  .lightbox-arrow svg {
+    display: block;
+    pointer-events: none;
+  }
+
+  .lightbox-counter {
+    position: fixed !important;
+    bottom: 26px !important;
+    left: 50% !important;
+    top: auto !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    color: #f0e6d2;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    z-index: 1000000 !important;
+  }
+
+  @media (max-width: 640px) {
+    .lightbox-arrow {
+      width: 42px;
+      height: 42px;
+    }
+
+    .lightbox-prev { left: 12px !important; }
+    .lightbox-next { right: 12px !important; }
+  }
+</style>
+</head>
+<body>
+  <div id="topbar"></div>
+<div class="page-header">
+  <h1>НАША ФОТО ГАЛЕРЕЯ</h1>
+  <p>Затишна атмосфера, чистота та увага до кожної деталі — простір, створений для повного розслаблення й відновлення.</p>
+</div>
+
+<div class="back-link-wrap">
+  <a href="index.html" class="back-link">
+    <span class="back-arrow">
+      <svg viewBox="0 0 24 24" width="18" height="18">
+        <path d="M19 12H5M11 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="back-text">Повернутись назад</span>
+  </a>
+</div>
+
+<div class="full-gallery-grid" id="fullGallery">
+  <div class="full-gallery-item"><img src="screenshots/cabinet/kab.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/2.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/5.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/6.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/7.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/8.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/9.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/10.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/11.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/12.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+  <div class="full-gallery-item"><img src="screenshots/cabinet/13.webp" alt="Кабінет масажу"><div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+</div>
+ 
+<!-- Лайтбокс -->
+<div class="gallery-lightbox" id="galleryLightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Закрити">
+    <svg viewBox="0 0 24 24" width="20" height="20">
+      <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="#f5d88c" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Попереднє фото">
+    <svg viewBox="0 0 24 24" width="20" height="20">
+      <path d="M15 18l-6-6 6-6" fill="none" stroke="#f5d88c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Фото кабінету">
+
+  <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Наступне фото">
+    <svg viewBox="0 0 24 24" width="20" height="20">
+      <path d="M9 6l6 6-6 6" fill="none" stroke="#f5d88c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script>
+  (function () {
+    const grid = document.getElementById("fullGallery");
+    const lightbox = document.getElementById("galleryLightbox");
+
+    if (!grid || !lightbox) {
+      console.warn("Галерея кабінету: не знайдено #fullGallery або #galleryLightbox");
+      return;
+    }
+
+    // Переносимо лайтбокс в самий кінець <body>, щоб він НЕ був
+    // вкладений у жоден блок з transform/filter/perspective —
+    // саме це ламає position:fixed і "стискає" оверлей.
+    document.body.appendChild(lightbox);
+
+    const galleryImages = Array.from(grid.querySelectorAll(".full-gallery-item img")).map((img) => img.src);
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+
+    let currentIndex = 0;
+
+    function updateLightbox() {
+      lightboxImg.src = galleryImages[currentIndex];
+      lightboxCounter.textContent = (currentIndex + 1) + " / " + galleryImages.length;
+    }
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      updateLightbox();
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateLightbox();
+    }
+
+    grid.querySelectorAll(".full-gallery-item").forEach((item, index) => {
+      item.addEventListener("click", () => openLightbox(index));
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxNext.addEventListener("click", showNext);
+    lightboxPrev.addEventListener("click", showPrev);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("show")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    });
+  })();
+</script>
+
+
+<div id="footer"></div>
+</body>
+</html>
